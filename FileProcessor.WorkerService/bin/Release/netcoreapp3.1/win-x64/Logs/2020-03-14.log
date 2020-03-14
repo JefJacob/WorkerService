@@ -1,0 +1,17 @@
+2020-03-14 07:54:59.5668  INFO    - Worker - OnChange event start: J:\Courses\Capstone\FileUpload\Source\InputFiles\GenericData-Athletics Ontario Outdoor Championship Series #3- U20 - Open Championships-12Jul2019-002.mdb 14-03-2020 07:54:59 
+2020-03-14 07:54:59.6528  INFO    - Worker - File Extension: mdb 
+2020-03-14 07:54:59.6921  INFO    - Worker - Calling File Processor.exe 
+2020-03-14 07:54:59.8472  INFO    - DataReader - Application Started | ProcessFile 
+2020-03-14 07:54:59.9863  INFO    - DataReader - Driver={Microsoft Access Driver (*.mdb)};DBQ=J:\Courses\Capstone\FileUpload\Source\InputFiles\GenericData-Athletics Ontario Outdoor Championship Series #3- U20 - Open Championships-12Jul2019-002.mdb 
+2020-03-14 07:55:00.1986 ERROR    - DataReader - Exception : Object reference not set to an instance of an object. 
+2020-03-14 07:55:00.1986  INFO    - Worker - File moved to J:\Courses\Capstone\FileUpload\Source\Backup\GenericData-Athletics Ontario Outdoor Championship Series #3- U20 - Open Championships-12Jul2019-002.mdb 
+2020-03-14 07:55:00.1986  INFO    - Worker - OnChange event end: J:\Courses\Capstone\FileUpload\Source\InputFiles\GenericData-Athletics Ontario Outdoor Championship Series #3- U20 - Open Championships-12Jul2019-002.mdb 14-03-2020 07:55:00 
+2020-03-14 07:58:17.9344  INFO    - Worker - OnChange event start: J:\Courses\Capstone\FileUpload\Source\InputFiles\GenericData-Athletics Ontario Outdoor Championship Series #3- U20 - Open Championships-12Jul2019-002.mdb 14-03-2020 07:58:17 
+2020-03-14 07:58:18.0136  INFO    - Worker - File Extension: mdb 
+2020-03-14 07:58:18.0538  INFO    - Worker - Calling File Processor.exe 
+2020-03-14 07:58:18.0538  INFO    - DataReader - Application Started | ProcessFile 
+2020-03-14 07:58:18.1297  INFO    - DataReader - Driver={Microsoft Access Driver (*.mdb)};DBQ=J:\Courses\Capstone\FileUpload\Source\InputFiles\GenericData-Athletics Ontario Outdoor Championship Series #3- U20 - Open Championships-12Jul2019-002.mdb 
+2020-03-14 07:58:18.5772  INFO    - DataReader - Application has started Reading Access DB 
+2020-03-14 07:58:18.7183 ERROR    - DataReader - Exception : ERROR [IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified 
+2020-03-14 07:58:18.7183  INFO    - Worker - File moved to J:\Courses\Capstone\FileUpload\Source\Backup\GenericData-Athletics Ontario Outdoor Championship Series #3- U20 - Open Championships-12Jul2019-002.mdb 
+2020-03-14 07:58:18.7183  INFO    - Worker - OnChange event end: J:\Courses\Capstone\FileUpload\Source\InputFiles\GenericData-Athletics Ontario Outdoor Championship Series #3- U20 - Open Championships-12Jul2019-002.mdb 14-03-2020 07:58:18 

@@ -1,0 +1,13 @@
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Logic.deps.json
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Logic.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Logic.pdb
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Entities.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Entities.pdb
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.pdb
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Logic.csprojAssemblyReference.cache
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Logic.AssemblyInfoInputs.cache
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Logic.AssemblyInfo.cs
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Logic.csproj.CopyComplete
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Logic.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Logic.pdb

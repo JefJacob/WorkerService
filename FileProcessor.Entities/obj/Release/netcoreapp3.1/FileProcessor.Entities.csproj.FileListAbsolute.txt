@@ -1,0 +1,8 @@
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Entities\bin\Release\netcoreapp3.1\FileProcessor.Entities.deps.json
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Entities\bin\Release\netcoreapp3.1\FileProcessor.Entities.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Entities\bin\Release\netcoreapp3.1\FileProcessor.Entities.pdb
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Entities\obj\Release\netcoreapp3.1\FileProcessor.Entities.csprojAssemblyReference.cache
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Entities\obj\Release\netcoreapp3.1\FileProcessor.Entities.AssemblyInfoInputs.cache
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Entities\obj\Release\netcoreapp3.1\FileProcessor.Entities.AssemblyInfo.cs
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Entities\obj\Release\netcoreapp3.1\FileProcessor.Entities.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Entities\obj\Release\netcoreapp3.1\FileProcessor.Entities.pdb

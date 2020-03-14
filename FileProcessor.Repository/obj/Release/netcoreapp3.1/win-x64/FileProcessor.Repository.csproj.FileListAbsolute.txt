@@ -1,0 +1,11 @@
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.deps.json
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.pdb
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Entities.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Entities.pdb
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.csprojAssemblyReference.cache
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.AssemblyInfoInputs.cache
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.AssemblyInfo.cs
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.csproj.CopyComplete
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.pdb

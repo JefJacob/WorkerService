@@ -268,3 +268,14 @@ J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\obj\Rel
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\obj\Release\netcoreapp3.1\win-x64\FileProcessor.WorkerService.csproj.CopyComplete
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\obj\Release\netcoreapp3.1\win-x64\FileProcessor.WorkerService.dll
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\obj\Release\netcoreapp3.1\win-x64\FileProcessor.WorkerService.pdb
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\nlog.config
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\NLog.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\System.Data.Odbc.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\System.Data.SqlClient.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\sni.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Entities.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Logic.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Logic.pdb
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Entities.pdb
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.pdb

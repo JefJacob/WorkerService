@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>FileProcessor.Logic</id>
+    <version>1.0.0</version>
+    <authors>FileProcessor.Logic</authors>
+    <owners>FileProcessor.Logic</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="FileProcessor.Entities" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="FileProcessor.Repository" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="NLog" version="4.6.8" exclude="Build,Analyzers" />
+        <dependency id="System.Data.Odbc" version="4.7.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="J:\Courses\Capstone\FileUpload\dotNetCORE\FileProcessor.Logic\bin\Debug\netcoreapp3.1\FileProcessor.Logic.dll" target="lib\netcoreapp3.1\FileProcessor.Logic.dll" />
+  </files>
+</package>

@@ -23,7 +23,6 @@ namespace FileProcessor.WorkerService
                     services.AddHostedService<Worker>((serviceProvider) =>
                     {
                         return new Worker(
-                            serviceProvider.GetService<ILogger<Worker>>(),
                             ConfigurationManager.AppSettings["datapath"],
                             ConfigurationManager.AppSettings["ext"]
                             );
