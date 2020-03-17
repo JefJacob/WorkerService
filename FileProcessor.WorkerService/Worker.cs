@@ -42,28 +42,25 @@ namespace FileProcessor.WorkerService
         private void OnChanged(object sender, FileSystemEventArgs e)
         {
             logger.Info($"OnChange event start: {e.FullPath} {DateTime.Now}");
-            logger.Info($"File Extension: { _watchedExtensions.FirstOrDefault()}");
+            
             if (_watchedExtensions.Any(ext => e.Name.EndsWith(ext)))
             {
                 try
                 {
                     if (IsFileClosed(e.FullPath, true))
                     {
-                        logger.Info("Calling File Processor.exe");
-                        //string strCmdText;
-                        //strCmdText = @"/C ipconfig /all > J:\Courses\Capstone\FileUpload\network_info_new.txt";
-                        //System.Diagnostics.Process.Start("CMD.exe", strCmdText);
                         DataReader.ProcessFile(e.FullPath);
+
                         var destinationFilePath = ConfigurationManager.AppSettings["dest"];
-                        var destinationFile = destinationFilePath + Path.GetFileName(e.FullPath);
-                        if (File.Exists(destinationFile))
-                        {
-                            File.Delete(destinationFile);
-                            
-                        }
-                        
-                        File.Move(e.FullPath, destinationFile);
-                        logger.Info($"File moved to {destinationFile}");
+                        var destinationFullpath = destinationFilePath + Path.GetFileName(e.FullPath);
+                        //if (File.Exists(destinationFile))
+                        //{
+                        //    File.Delete(destinationFile);
+
+                        //}
+                        destinationFullpath = GetNewPath(destinationFullpath);
+                        File.Move(e.FullPath, destinationFullpath);
+                        logger.Info($"File moved to {destinationFullpath}");
                     }
                 }
                 catch (Exception ex)
@@ -100,6 +97,22 @@ namespace FileProcessor.WorkerService
             }
             while (!fileClosed && retries > 0);
             return fileClosed;
+        }
+        private string GetNewPath(string fullPath)
+        {
+            int count = 1;
+
+            string fileNameOnly = Path.GetFileNameWithoutExtension(fullPath);
+            string extension = Path.GetExtension(fullPath);
+            string path = Path.GetDirectoryName(fullPath);
+            string newFullPath = fullPath;
+
+            while (File.Exists(newFullPath))
+            {
+                string tempFileName = string.Format("{0}({1})", fileNameOnly, count++);
+                newFullPath = Path.Combine(path, tempFileName + extension);
+            }
+            return newFullPath;
         }
     }
 }

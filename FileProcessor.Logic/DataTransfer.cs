@@ -5,6 +5,7 @@ using NLog;
 using System.Data.Odbc;
 using FileProcessor.Repository;
 using FileProcessor.Entities;
+using System.Linq;
 
 namespace FileProcessor.Logic
 {
@@ -19,24 +20,28 @@ namespace FileProcessor.Logic
         public static void ProcessClubData(OdbcDataReader reader)
         {
             logger.Info("Started Processing Club Details");
+            List<ClubEntity> sList = new List<ClubEntity>();
             while (reader.Read())
             {
-                ClubEntity club = new ClubEntity();
-                club.ClubCode = reader["Team_abbr"].ToString();
-                club.ClubName = reader["Team_name"].ToString();
-
-                try
-                {
-                    ClubRepo.AddClub(club);
-                }
-                catch (Exception e)
-                {
-                    if (e.Message.Contains("Violation of PRIMARY KEY constraint"))
-                        logger.Info("Duplicate:" + club.ClubCode);
-                }
-
-                finally { }
+                sList.Add(
+                    new ClubEntity()
+                    {
+                        ClubCode = reader["Team_abbr"].ToString(),
+                        ClubName = reader["Team_name"].ToString()
+                    });
             }
+            List<ClubEntity> dList = new List<ClubEntity>();
+            dList = ClubRepo.GetClubs();
+            List<ClubEntity> newClub = sList.Except(dList).ToList();
+            if (newClub.Count != 0)
+            {
+                foreach (ClubEntity x in newClub)
+                {
+                    ClubRepo.AddClub(x);
+                }
+            }
+
+
             logger.Info("Processing Club Details Completed");
         }
 
@@ -244,18 +249,62 @@ namespace FileProcessor.Logic
             {
                 try
                 {
-
-                    //String Event_name = reader["Event_name"].ToString();
-                    //String MultiSubEvent_name = reader["MultiSubEvent_name"].ToString();
-                    String Full_Eventname = "";
-                    if (!reader["Event_dist"].ToString().Equals("0"))
-                        Full_Eventname = "Mixed " + reader["Event_name"].ToString() + " " + reader["Event_dist"].ToString() + " Meters " + reader["MultiSubEvent_name"].ToString() + " " + reader["Div_name"].ToString();
-                    else
-                        Full_Eventname = "Mixed " + reader["Event_name"].ToString() + " " + reader["MultiSubEvent_name"].ToString() + " " + reader["Div_name"].ToString();
+                    //Splitting and processing AThlete Events
+                    String Full_Eventname = reader["Full_Eventname"].ToString();
                     if (Full_Eventname.Contains("AMB"))
                         Full_Eventname = Full_Eventname.Replace("AMB", "Ambulatory");
                     if (Full_Eventname.Contains("WC"))
                         Full_Eventname = Full_Eventname.Replace("WC", "Wheelchair");
+
+                    string gender = "";
+                    string division = "";
+                    string eventName = "";
+                    if (Full_Eventname.Contains("29 & Under"))
+                        Full_Eventname = Full_Eventname.Replace("29 & Under", "29");
+                    string[] words = Full_Eventname.Split(' ');
+
+                    //M29 & Under Indoor Pentathlon Masters
+                    //Men Long Jump Indoor Pentathlon 50 Masters
+                    //COmbined master events
+                    if (words[0].StartsWith("M"))
+                    {
+                        gender = "Men";
+                        division = words[0].Replace("M", "");
+                    }
+                    else if (words[0].StartsWith("W"))
+                    {
+                        gender = "Women";
+                        division = words[0].Replace("W", "");
+                    }
+                    else
+                    {
+                        gender = "Mixed";
+                        division = words[0].Replace("X", "");
+                    }
+                    if (reader["Div_name"].ToString().Equals("Masters"))
+                    {
+                        if (Full_Eventname.Contains("29"))
+                            division = "29 & Under " + reader["Div_name"].ToString();
+                        else
+                            division = division + " " + reader["Div_name"].ToString();
+                    }
+                    else
+                        division = division + " " + reader["Div_name"].ToString();
+                    List<string> wList = new List<string>(words);
+                    wList.RemoveAt(0);//removes  
+                    wList.RemoveAt(wList.Count - 1);
+
+                    if (!reader["Event_dist"].ToString().Equals("0"))
+                        if (!reader["Res_note"].ToString().Equals(""))
+                            eventName = reader["Event_dist"].ToString() + " Meters " + reader["MultiSubEvent_name"].ToString() + " " + reader["Res_note"].ToString() + " " + string.Join(" ", wList);
+                        else
+                            eventName = reader["Event_dist"].ToString() + " Meters " + reader["MultiSubEvent_name"].ToString() + " " + string.Join(" ", wList);
+                    else
+                        if (!reader["Res_note"].ToString().Equals(""))
+                        eventName = reader["MultiSubEvent_name"].ToString() + " " + reader["Res_note"].ToString() + " " + string.Join(" ", wList);
+                    else
+                        eventName = reader["MultiSubEvent_name"].ToString() + " " + string.Join(" ", wList);
+
                     String Rnd_ltr = reader["Rnd_ltr"].ToString();
                     String First_name = reader["First_name"].ToString();
                     String Last_name = reader["Last_name"].ToString();
@@ -271,37 +320,18 @@ namespace FileProcessor.Logic
                     String Res_wind = reader["Res_wind"].ToString();
                     String Event_score = reader["Event_score"].ToString();
 
+
                     ResultEntity result = new ResultEntity();
 
-                    //String Full_Eventname = "Mixed " + Event_name + " " + MultiSubEvent_name;
-                    //if (AthleteEventRepo.GetAthleteEventId(Full_Eventname, Rnd_ltr) == 0)
-                    //{
-                    //    //string[] words = Full_Eventname.Split(' ');
-                    //    AthleteEventEntity athleteEvent = new AthleteEventEntity();
-                    //    athleteEvent.Gender = "Mixed";
-                    //    athleteEvent.EventRound = Rnd_ltr;
-                    //    athleteEvent.Division = Div_name;
-
-                    //    athleteEvent.Name = Event_name + " " + Event_dist+" "+MultiSubEvent_name;
-                    //    AthleteEventRepo.AddAthleteEvent(athleteEvent);
-                    //}
-
-                    if (AthleteEventRepo.GetAthleteEventId(Full_Eventname, Rnd_ltr) == 0)
+                    if (AthleteEventRepo.GetAthleteEventId(gender + " " + eventName + " " + division, Rnd_ltr) == 0)
                     {
-                        if (Full_Eventname.Contains("AMB"))
-                            Full_Eventname.Replace("AMB", "Ambulatory");
-                        if (Full_Eventname.Contains("WC"))
-                            Full_Eventname.Replace("WC", "Wheelchair");
-                        string[] words = Full_Eventname.Split(' ');
-                        List<string> wList = new List<string>(words);
+
                         AthleteEventEntity athleteEvent = new AthleteEventEntity();
-                        athleteEvent.EventGender = words[0];
+                        athleteEvent.EventGender = gender;
                         athleteEvent.EventRound = Rnd_ltr;
-                        athleteEvent.EventDivision = words[words.Length - 1];
-                        wList.RemoveAt(0);
-                        wList.RemoveAt(wList.Count - 1);
-                        athleteEvent.EventName = string.Join(" ", wList);
-                        //athleteEvent.Name = Full_Eventname.Replace(words[0], "").Replace(words[words.Length - 1], "").Trim();
+                        athleteEvent.EventDivision = division;
+                        athleteEvent.EventName = eventName;
+
                         AthleteEventRepo.AddAthleteEvent(athleteEvent);
 
                     }
@@ -338,7 +368,7 @@ namespace FileProcessor.Logic
                     }
 
                     result.CompId = GetCompId(fileName);
-                    result.EventId = AthleteEventRepo.GetAthleteEventId(Full_Eventname, Rnd_ltr);
+                    result.EventId = AthleteEventRepo.GetAthleteEventId(gender + " " + eventName + " " + division, Rnd_ltr);
                     result.Mark = Res_markDisplay;
                     result.Position = Convert.ToInt32(Event_score);
                     result.Wind = Res_wind;
