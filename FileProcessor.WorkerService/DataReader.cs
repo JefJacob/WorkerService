@@ -51,6 +51,7 @@ namespace FileProcessor.WorkerService
                 }
             }
         }
+        
         public static void ReadData(string connectionString, string fileName)
         {
             logger.Info("Application has started Reading Access DB");
@@ -78,7 +79,7 @@ namespace FileProcessor.WorkerService
                 OdbcCommand command = new OdbcCommand(queryStringResults, connection);
                 connection.Open();
                 OdbcDataReader reader = command.ExecuteReader();
-                DataTransfer.ProcessResultsData(reader, fileName);
+                DataTransfer.ProcessResultsData(reader, fileName,"Standard and Masters Event");
                 reader.Close();
             }
 
@@ -94,7 +95,7 @@ namespace FileProcessor.WorkerService
                 OdbcCommand command = new OdbcCommand(queryStringRelayResults, connection);
                 connection.Open();
                 OdbcDataReader reader = command.ExecuteReader();
-                DataTransfer.ProcessResultsData(reader, fileName);
+                DataTransfer.ProcessResultsData(reader, fileName, "Relay events and sprint Medley");
                 reader.Close();
             }
 
@@ -111,7 +112,7 @@ namespace FileProcessor.WorkerService
                 OdbcCommand command = new OdbcCommand(queryStringCombinedResults, connection);
                 connection.Open();
                 OdbcDataReader reader = command.ExecuteReader();
-                DataTransfer.ProcessResultsData(reader, fileName);
+                DataTransfer.ProcessResultsData(reader, fileName,"Combined Events");
                 reader.Close();
             }
 

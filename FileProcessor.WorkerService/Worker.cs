@@ -20,8 +20,19 @@ namespace FileProcessor.WorkerService
         {
             _path = filePath ?? throw new ArgumentNullException("Worker:filePath cannot be null.");
             _watchedExtensions = watchedExtensions.Split(';').ToList() ?? throw new ArgumentNullException("Worker:watchedExtensions cannot be null.");
-            
+            string datapath = ConfigurationManager.AppSettings["datapath"];
+            string dest = ConfigurationManager.AppSettings["dest"];
+            if (!Directory.Exists(datapath))
+            {
+                DirectoryInfo di = Directory.CreateDirectory(datapath);
+            }
+            if (!Directory.Exists(dest))
+            {
+                DirectoryInfo di = Directory.CreateDirectory(dest);
+            }
         }
+
+
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {

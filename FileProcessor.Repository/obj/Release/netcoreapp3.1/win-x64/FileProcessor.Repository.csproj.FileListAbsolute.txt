@@ -9,3 +9,4 @@ J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\obj\Releas
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.csproj.CopyComplete
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.dll
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.pdb
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Repository\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.csproj.CoreCompileInputs.cache

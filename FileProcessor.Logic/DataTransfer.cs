@@ -20,10 +20,12 @@ namespace FileProcessor.Logic
         }
         public static void ProcessClubData(OdbcDataReader reader)
         {
+            int ClubCountFile = 0, ClubCountDB=0;
             logger.Info("Started Processing Club Details");
             List<ClubEntity> sList = new List<ClubEntity>();
             while (reader.Read())
             {
+                
                 sList.Add(
                     new ClubEntity()
                     {
@@ -32,8 +34,11 @@ namespace FileProcessor.Logic
                     });
             }
             List<ClubEntity> dList = new List<ClubEntity>();
+            ClubCountFile = sList.Count;
             dList = ClubRepo.GetClubs();
+            
             List<ClubEntity> newClub = sList.Except(dList).ToList();
+            ClubCountDB = newClub.Count;
             if (newClub.Count != 0)
             {
                 foreach (ClubEntity x in newClub)
@@ -41,19 +46,20 @@ namespace FileProcessor.Logic
                     ClubRepo.AddClub(x);
                 }
             }
-
-
+            logger.Info($"Total Clubs in File :{ ClubCountFile }");
+            logger.Info($"New Clubs added to Database :{ ClubCountDB }");
             logger.Info("Processing Club Details Completed");
         }
 
-        public static void ProcessResultsData(OdbcDataReader reader, string fileName)
+        public static void ProcessResultsData(OdbcDataReader reader, string fileName,string resultType)
         {
             CompetitionEntity comp = new CompetitionEntity();
             comp = CompetitionRepo.GetCompetition(fileName);
-
-            logger.Info("Started Processing Result Details/Standard");
+            int resultsCount = 0,resultsInserted=0;
+            logger.Info($"Started Processing : {resultType}");
             while (reader.Read())
             {
+                resultsCount++;
                 try
                 {
 
@@ -177,7 +183,7 @@ namespace FileProcessor.Logic
                         {
                             AthleteEntity athlete = new AthleteEntity();
                             athlete.ACNum = Reg_no;
-                            athlete.ClubAffiliationSince = DateTime.Now;
+                            athlete.ClubAffiliationSince = comp.StartDate;
                             athlete.ClubCode = Team_Abbr;
                             athlete.DOB = Birth_date;
                             athlete.FirstName = First_name;
@@ -215,7 +221,10 @@ namespace FileProcessor.Logic
                     result.Wind = Res_wind;
 
                     if (ResultRepo.CheckDuplicate(result) == 0)
+                    {   
                         ResultRepo.AddResult(result);
+                        resultsInserted++;
+                    }
                     else
                         logger.Error("Duplicate Result: " + fileName.Replace(".mdb", "") + "->" + eventGender + " " + eventName + " " + division + " " + Rnd_ltr + "->" + First_name + " " + Last_name + " DOB: " + Birth_date.ToString("dd-MM-yyyy"));
                 }
@@ -225,7 +234,9 @@ namespace FileProcessor.Logic
                 }
                 finally { }
             }
-            logger.Info("Completed Processing Result Details/Standard");
+            logger.Info($"Total lines read by application : {resultsCount}");
+            logger.Info($"Total results synced to database : {resultsInserted}");
+            logger.Info($"Completed Processing : {resultType}");
         }
 
     }

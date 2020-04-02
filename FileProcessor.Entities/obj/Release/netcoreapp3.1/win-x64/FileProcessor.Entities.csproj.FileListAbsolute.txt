@@ -6,3 +6,4 @@ J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Entities\obj\Release\
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Entities\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Entities.AssemblyInfo.cs
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Entities\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Entities.dll
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Entities\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Entities.pdb
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Entities\obj\Release\netcoreapp3.1\win-x64\FileProcessor.Entities.csproj.CoreCompileInputs.cache

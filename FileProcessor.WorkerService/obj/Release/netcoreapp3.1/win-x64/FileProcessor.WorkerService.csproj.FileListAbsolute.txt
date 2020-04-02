@@ -257,7 +257,6 @@ J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Rel
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\hostfxr.dll
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\hostpolicy.dll
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\mscordaccore.dll
-J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\mscordaccore_amd64_amd64_4.700.19.60701.dll
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\mscordbi.dll
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\mscorrc.debug.dll
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\mscorrc.dll
@@ -279,3 +278,6 @@ J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Rel
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Logic.pdb
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Entities.pdb
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\FileProcessor.Repository.pdb
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\bin\Release\netcoreapp3.1\win-x64\mscordaccore_amd64_amd64_4.700.20.11803.dll
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\obj\Release\netcoreapp3.1\win-x64\FileProcessor.WorkerService.csproj.CoreCompileInputs.cache
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.WorkerService\obj\Release\netcoreapp3.1\win-x64\FileProcessor.WorkerService.genruntimeconfig.cache

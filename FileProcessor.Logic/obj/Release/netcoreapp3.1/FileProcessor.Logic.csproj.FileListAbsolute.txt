@@ -11,3 +11,4 @@ J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\obj\Release\net
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\obj\Release\netcoreapp3.1\FileProcessor.Logic.csproj.CopyComplete
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\obj\Release\netcoreapp3.1\FileProcessor.Logic.dll
 J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\obj\Release\netcoreapp3.1\FileProcessor.Logic.pdb
+J:\Courses\Capstone\FileUpload\WorkerService\FileProcessor.Logic\obj\Release\netcoreapp3.1\FileProcessor.Logic.csproj.CoreCompileInputs.cache
